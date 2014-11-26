@@ -35,7 +35,7 @@ module Guard
       total    = 0
       failures = 0
       duration = 0
-      run_command("mix test #{paths.join(' ')}") do |line|
+      run_command("mix test --color #{paths.join(' ')}") do |line|
         puts line
         if /Finished in ([0-9.]+) seconds/.match(line)
           duration = Regexp::last_match[1]
